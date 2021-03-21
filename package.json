@@ -8,7 +8,7 @@
     "dev-slow": "rm -rf dist/ && parcel src/index.pug --no-cache",
     "clean": "rm -rf dist/",
     "build": "rm -rf dist/ && NODE_ENV=production parcel build src/index.pug && cp src/html/* dist/pages/ && cp src/root/* dist/",
-    "prod": "rm -rf dist/ && NODE_ENV=production parcel build src/index.pug && cp src/html/* dist/pages/ && cp src/root/* dist/ && netlify deploy --prod ",
+    "prod": "rm -rf dist/ && NODE_ENV=production parcel build src/index.pug && cp src/html/* dist/pages/ && cp src/root/* dist/ && netlify deploy ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "ahmed",
