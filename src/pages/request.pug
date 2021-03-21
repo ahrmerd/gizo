@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Gizo
+        link(rel="stylesheet", href="../scss/app.scss")
+    body.theme-light
+        include ../includes/header.pug
+        //- include ../includes/construction.pug
+        .overlay
+        header.page-title
+            h4 service request form
+                
+        main
+            a(href="./success.pug")
+            | <!-- form 2 -->
+            <form method="POST" action="/pages/success" class="cool-form-box" id="form" name="request" data-netlify="true">
+            <input type="hidden" name="form-name" value="request">
+            <div class="cool-form-title">make a request</div>
+            <div class="cool-form-item">
+                <input type="text" id="name" name="name" required class="cool-form-input" />
+                <label for="name" class="cool-form-label">fullname</label>
+            </div>
+            <div class="cool-form-item">
+                <input type="text" id="email" name="email" required class="cool-form-input" />
+                <label for="email" class="cool-form-label">email</label>
+            </div>
+            <div class="cool-form-item">
+                <input type="text" id="organization" name="organization" required class="cool-form-input" />
+                <label for="organization" class="cool-form-label">Organization</label>
+            </div>
+            <div class="cool-form-item">
+                <input type="text" id="phone" name="phone" required class="cool-form-input" />
+                <label for="phone" class="cool-form-label">phone</label>
+            </div>
+            <div class="cool-form-item">
+                <textarea name="description", rows="4" id="desc" required class="cool-form-input"></textarea>
+                <label for="desc" class="cool-form-label">describe your project</label>
+            </div>
+            <div class="cool-form-item">
+                p select your services
+                .checkboxes
+                    each service in datas.services
+                        .checkbox
+                            -var name= `service-${service.title}`
+                            label(for=service.title)=service.title
+                            input(type="checkbox" service name=service.title id=service.title class="cool-form-input")
+
+                script.
+                    
+                    
+
+            </div>
+            
+            <div class="cool-form-item" id="tiers">
+                p which type of service do you want
+                select.select#tier(name="tier")
+                        each tier in datas.tiers
+                            option(value=tier.id)=tier.title
+            </div>
+            script.
+                selectAService()
+
+                let selected = document.getElementById('tier')
+                selected.addEventListener('change', e=>{
+                    checkforFree(e.target.value)
+                })
+
+                document.addEventListener('DOMContentLoaded', ()=>{
+                    checkforFree(document.getElementById('tier').value)
+                })
+                function selectAService(){
+                    let form = document.getElementById('form')
+                        form.addEventListener('submit', e =>{
+                            e.preventDefault()
+                            let services =  form.querySelectorAll('input[service]:checked')
+                            console.log(!!services.length)
+                            if(services.length){
+                                form.submit()
+                            }   
+                            else{
+                                alert('please select a service')
+                            }
+                        })
+                                         
+
+                }
+                function checkforFree(selectedId){
+                    let freeId = #{datas.freeId}
+                    if(freeId === 0) {
+                        let tiers = document.getElementById('tiers')
+                        console.log(freeId)
+                        tiers.remove()
+                    }
+                    else{
+                        //- console.log('else block')
+                        let form = document.getElementById('form')
+                        let freeForm = document.getElementById('free-form')
+                        if(selectedId == freeId){
+                            if(!freeForm){
+                                console.log('free!!')
+                                createElement()
+                        }}
+                        else{
+                            console.log(freeForm)
+                            if(freeForm){
+
+                                freeForm.remove()
+                        }}
+
+                        }
+                            
+                        
+                        
+                    }
+                function createElement(){
+                    let submit = document.getElementById('submit')
+                    let div = document.createElement('div')
+                    div.classList.add('cool-form-item')
+                    //- div.style.marginTop = "1rem"
+                    //- div.style.fontSize = "0.7rem"
+                    //- div.style.letterSpacing = ".5px"
+                    div.id = "free-form"
+                    div.innerHTML = template
+                    form.insertBefore(div, submit)
+                }
+                
+                let template = `
+                        <textarea name="reason", rows="4" id="reason" required class="cool-form-input"></textarea>
+                        <label for="reason" class="cool-form-label">you request for a free service why do you think we should work for you</label>
+                    
+                        `
+
+            
+            .cool-form-submit-box#submit
+                <button class="cool-form-submit">submit</button>           
+
+            .socials 
+                each social in datas.socials
+                    a(href=social.url)
+                        img(src='/' + social.icon, alt="")
+            </form>
+            
+        script(src="../js/index.js")

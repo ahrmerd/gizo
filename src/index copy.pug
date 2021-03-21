@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Gizo
+        link(rel="stylesheet", href="./scss/app.scss")
+
+
+    body(class="theme-light")
+        .overlay
+        .header()
+
+            include includes/logo.pug
+
+            .hamburger
+                .top-bun
+                .middle-bun
+                .bottom-bun
+            nav.nav
+                a(href="#" class="nav-link") Our Service
+                a(href="#" class="nav-link") Our Portfolio
+                a(href="#" class="nav-link") Contact US
+                a(href="#" class="nav-link") About Us
+                a(href="#" class="nav-link") Make a Request
+
+        main
+
+            .hero-section
+                .hero-left(creat-left)
+                    h1= datas.motto
+                //-     p= datas.theme
+                //-     .hero-buttons
+                //-         button(class="btn btn-outline") Our Service
+                        button(class="btn btn-primary") Make a request
+                .hero-right(data-aos="fade-right")
+                    include includes/hero.pug
+                    
+                           
+        i(class="fa fa-home theme-changer")
+        
+        script(src="./js/index.js")
+

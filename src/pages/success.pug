@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Gizo
+        link(rel="stylesheet", href="../scss/app.scss")
+    body.theme-light
+        .overlay
+
+        include ../includes/header.pug
+
+        style(type="text/css").
+            .construction {
+                background-color: var(--primary);
+                color: white;
+                margin: auto;
+                position: fixed;
+                top:50%;
+                left:50%;
+                border-radius: 10px;
+                padding: 1rem;
+                transform: translate(-50%, -50%);
+                z-index: -1;
+                text-align: center;
+            }
+            #title{
+                margin-bottom: .4rem;
+            }
+            #subtitle{
+                margin-bottom: 1.5rem;
+                font-size: .8rem;
+            }
+            #moreinfo a{
+                color: black;
+                font-weight: bold;
+                text-transform: capitalize;
+            }
+
+        .construction() 
+            h1#title Thank you for your submission
+            p#subtitle we will review your request and get back to you as soon as possible
+            p#moreinfo Go &nbsp;
+                a(href="/") home
+                | &nbsp; or you can contact us @
+            p.email
+                span Email : &nbsp;
+                span=datas.email
+            p.phone
+                span phone: &nbsp; 
+                span=datas.phone
+            .socials
+                each social in datas.socials
+                    - var url = `../${social.icon}`
+                    a.social(href=social.url)
+                        img(src=url, alt="")
+                        
+        
+            p.footer &copy; #{datas.year}  #{datas.companyname} 
+                
+        script(src="../js/index.js")

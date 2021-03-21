@@ -1,0 +1,24 @@
+{
+  "name": "gizo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.pug",
+    "dev-slow": "rm -rf dist/ && parcel src/index.pug --no-cache",
+    "clean": "rm -rf dist/",
+    "build": "rm -rf dist/ && NODE_ENV=production parcel build src/index.pug && cp src/html/* dist/pages/ && cp src/root/* dist/",
+    "prod": "rm -rf dist/ && NODE_ENV=production parcel build src/index.pug && cp src/html/* dist/pages/ && cp src/root/* dist/ && netlify deploy --prod ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ahmed",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^1.12.4",
+    "pug": "^3.0.2",
+    "sass": "^1.32.8"
+  },
+  "dependencies": {
+    "scrollreveal": "^4.0.7"
+  }
+}

@@ -1,0 +1,54 @@
+[creat-left]{
+    transform: translateY(-100%);
+    opacity: 0;
+    animation: fromleft 2000ms ease forwards;
+}
+
+[creat-right]{
+    transform: translateY(100%);
+    opacity: 0;
+    animation: fromright 2000ms ease forwards;
+}
+
+[creat-fade]{
+    opacity: 0;
+    animation: fadeon 2000ms ease forwards;
+}
+@keyframes fromleft{
+    from{
+    transform: translateY(-100%);
+    opacity: 0;
+
+
+    }
+    to{
+    transform: translateY(0);
+    opacity: 1;
+    
+    }
+}
+
+@keyframes fromright{
+    from {
+    transform: translateY(100%);
+    opacity: 0;
+
+
+    }
+    to{
+    transform: translateY(0);
+    opacity: 1;
+    
+    }
+}
+@keyframes fadeon{
+    from {
+    opacity: 0;
+
+
+    }
+    to{
+    opacity: 1;
+    
+    }
+}

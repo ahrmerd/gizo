@@ -1,0 +1,225 @@
+.form{
+    padding: 1rem;
+}
+
+.form-item{
+    margin-bottom: 2rem;
+}
+
+.form-input-text{
+    width: 70%;
+    margin: auto;
+    padding: .5rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+    display: block;
+    outline: none;
+    color: white;
+    box-shadow: 5px 5px 5px $primary;
+    transition: border 0.3s ease-in;
+    border-radius: 5px;
+}
+.form-label{
+    display: block;
+    margin: auto;
+    text-align: center;
+    text-transform: capitalize;
+    color: white;
+    font-size: .87rem;
+    opacity: 0;
+}
+.form-input-text:focus{
+    border-bottom: 1px solid white;
+}
+.form-input-text::placeholder{
+    margin: auto;
+    text-transform: capitalize;
+}
+.form-input-text:focus~ .form-label,
+.form-input-text:valid~ .form-label{
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
+
+}
+
+
+
+//form-2
+
+.cool-form-box{
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    border-radius: 10px;
+    background-color: transparentize($color: $primary, $amount: 0.8);
+    box-sizing: border-box;
+    width: 80%;
+    
+    padding: 2.5rem;
+    text-transform: capitalize;
+    // border: 0.5px solid;
+    border-radius: 5px;
+    text-align: center;
+    padding: 0.75rem;
+    margin: auto;
+    margin-top: 7rem;
+    margin-bottom: 2rem;
+    @media all and (min-width: 600px) {
+        width: 70%;
+    }
+
+    @media all and (min-width: 780px) {
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        // justify-content: space-between;
+    }
+}
+
+.cool-form-item{
+    position: relative;
+    @media all and (min-width: 780px) {
+        width: 46%;
+        // display: flex;
+        // display: inline;
+    }
+    p{
+        text-decoration: underline;
+        margin-top: 1rem;
+    }
+    .checkboxes{
+        text-align: start;
+        .checkbox{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            label{
+                width: 90%;
+            }
+            input{
+                
+                width: 1rem;
+            }
+        }
+    }
+    .select{
+        margin-top: .5rem;
+        padding: .5rem;
+        text-transform: capitalize;
+    }
+}
+.cool-form-title{
+    width: 100%;
+}
+.cool-form-input{
+    transition: all .5s ease;
+
+    width: 100%;
+    
+    padding: 0.75rem 0.25rem;
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 5px;
+    border-bottom: 1px solid ;
+    outline: none;
+    color: black;
+    &:hover{
+        border: 1px solid $primary;;
+    }
+    &:focus{
+        border: 1px solid $primary;
+        border-bottom: 3px solid $primary;
+        box-shadow: 0 25 50px -10px rgba(0, 0, 0, .25);
+    }
+}
+
+.cool-form-label{
+    color: black;
+    position: absolute;
+    // transform: translate(100%);
+    top: 2rem;
+    left: 0;
+    padding-left: 0.125rem ;
+    pointer-events: none ;
+    transition: all 500ms ease;
+}
+.cool-form-input:focus ~ .cool-form-label,
+.cool-form-input:valid ~ .cool-form-label{
+    // position: absolute;
+    left: 0;
+    color: var(--text);
+    font-size: 0.75rem;
+    // transform: translate(100%);
+    top: 0.1rem;
+    // left: 0;
+    pointer-events: none ;
+    &::after{
+        content: ':';
+    }
+    
+}
+
+
+
+
+
+// .cool-form-input:focus ~ .cool-form-label,
+// .cool-form-input:valid ~ .cool-form-label{
+//     top: -20px;
+//     left: 0;
+//     color: $primary;
+//     font-size: 0.75rem;
+// }
+.cool-form-submit-box{
+    width: 100%;
+}
+.cool-form-submit{
+    margin-top: 2rem;
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: $primary;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    letter-spacing: 4px;
+    border: none;
+
+}
+.cool-form-submit:hover{
+    outline: none;
+    background: $primary;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px $primary,
+              0 0 25px $primary,
+              0 0 50px $primary,
+              0 0 100px $primary;
+}
+
+// nhn
+#free-form{
+    // padding-top: 1rem;
+    margin-top: 1rem;
+}
+.cool-form-label[for = 'reason']{
+    // top: 3rem;
+    font-size: .8rem;
+}
+.cool-form-input:focus ~ [for='reason'].cool-form-label,
+.cool-form-input:valid ~ [for='reason'].cool-form-label {
+    font-size: 0.75rem;
+    // top: auto;
+    bottom: 0 !important;
+    pointer-events: none;
+}
+#reason.cool-form-input:focus,
+#reason.cool-form-input:valid{
+    transform: translateY(1rem);
+}
+// noo

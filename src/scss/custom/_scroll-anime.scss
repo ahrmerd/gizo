@@ -1,0 +1,38 @@
+.animate-scroll.creat-left {
+    transform: translateX(100%);
+    position: relative;
+    transition: all ease .5s;
+    opacity: 0;
+}
+
+.animate-scroll.creat-up {
+    transform: translateY(100%);
+    position: relative;
+    transition: all ease .5s;
+    opacity: 0;
+}
+
+.animate-scroll.creat-down {
+    transform: translateY(100%);
+    position: relative;
+    transition: all ease .5s;
+    opacity: 0;
+}
+.animate-scroll.creat-test {
+    transform: translateY(100%) translateX(100%);
+    position: relative;
+    transition: all ease .5s;
+    opacity: 0;
+}
+.animate-scroll.creat-right {
+    transform: translateX(-100%);
+    position: relative;
+    transition: all ease .5s;
+    opacity: 0;
+}
+.animate-scroll.is-visible{
+    transform: translate(0);
+    opacity: 1;
+}
+
+

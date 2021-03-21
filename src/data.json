@@ -1,0 +1,113 @@
+{
+    "motto" : "we make technology an asset for your business",
+    "theme" : "design, develope, empower and maintain your business brilliantly, efficiently and easily with our services",
+    "about" : {
+        "text": "Hello, We are gizo... Do You Need a Website Or an app, we are creative developers of mobile apps, desktop apps and web apps. Our misssion is to empower individuals, companies and organizations by making masterpiece software that will enhance the productivity of your firm",
+        "icon" : "assets/about.svg"
+    },
+    "aims" : [
+        {
+            "icon":"assets/start.svg",
+            "title": "start and a maintain business"
+        },
+        {
+            "icon": "assets/customers.svg",
+            "title": "attract, engage and maintain customers"
+        },
+        {
+            "icon":"assets/boost.svg",
+            "title":"boost your business and ensure maximum productivity"
+        }
+
+    ],
+    "services" : [
+        {   "id": "1",
+            "icon" : "assets/web.svg",
+            "title" : "web and mobile development",
+            "description" : "We are boastful of how well we can build web and mobile applications that suites your business goals and people love."
+        },
+        {
+            "id": "2",
+            "icon" : "assets/marketing.svg",
+            "title" : "digital marketing",
+            "description" : "Our Digital Marketing strategies is set at delivering results-driven digital solutions to clients in the country. We are your sure bet for reaching the hearts of your target audience."
+        },
+        {
+            "id": "3",
+            "icon" : "assets/software.svg",
+            "title" : "software development",
+            "description": "we have experts on windows application, android applications and ios applications."
+        },
+        {
+            "id": "4",
+            "icon": "assets/creative.svg",
+            "title": "creative design",
+            "description": "We turn your imaginations into awesome visuals. We beat your limitations and create masterpiece designs."
+        }
+        
+    ],
+    "contact": {
+        "icon" :"assets/chat.png"
+    },
+    "email" : "gizonigeria@gmail.com",
+    "phone" : "+234 704 9909551",
+    "socials" : [
+        {
+            "name": "whatsapp",
+            "icon" : "assets/whatsapp.svg",
+            "url" : "https://api.whatsapp.com/send?phone=2347049909551&text=hello%F0%9F%96%90%EF%B8%8F...i%20am"
+        },
+        {
+            "name": "instagram",
+            "icon" : "assets/instagram.svg",
+            "url" : "https://instagram.com/gizonigeria"
+        },
+        {
+            "name": "twitter",
+            "icon" : "assets/twitter.svg",
+            "url" : "https://twitter.com/gizonigeria"
+        },
+        {
+            "name": "telegram",
+            "icon" : "assets/telegram-app.svg",
+            "url" : "https://t.me/gizonigeria"
+        }
+
+    ],
+    "companyname" : "Gizo Nigeria",
+    "year": "2021",
+    "ourServices": [
+        {
+            "title": "creative design",
+            "description" :"We turn your imaginations into awesome visuals. We beat your limitations and create masterpiece designs.",
+            "image" : "assests/creative.png"
+        },
+        {
+            "title" :"digital marketing",
+            "description":"Our Digital Marketing strategies is set at delivering results-driven digital solutions to clients across Africa. We are your sure bet for reaching the hearts of your target audience.",
+            "image":"assests/marketing.png"
+        },
+        {
+            "title" :"web and mobile development",
+            "description":"We are boastful of how well we can build web and mobile applications that suites your business goals and people love.",
+            "image" : "assests/web.png"
+        },
+        {
+            "title" :"software development",
+            "description" :"We are boastful of how well we can build web and mobile applications that suites your business goals and people love.",
+            "image" : "assests/software.png"
+        }
+    ],
+    "tiers" : [
+        {
+            "id" : 1,
+            "title" : "Free Tier"
+        },
+        {
+            "id" : 2,
+            "title" : "Paid Tier"
+        }
+    ],
+    "freeId" : 1
+
+}

@@ -1,0 +1,61 @@
+// set the basic colors here
+$bg-light: darken(white, 10) ;
+$bg-dark: lighten(black, 10);
+$primary: indigo;
+$secondary: blue;
+
+// do not change anything below here
+
+@function setTextColor($bgColor){
+    @if lightness($bgColor) > 40 {
+        @return black;
+    }
+    @else{
+        @return white
+    }
+}
+@function colorLevel($color, $level, $lighten ){
+    @if $lighten == 'lighten' {
+        @if lightness($color) > 50 { 
+            @debug 'hello sass';       
+            @return lighten($color, $level - 20);
+        }
+        @else if lightness($color) > 30{
+            @return lighten($color, $level - 10)
+        }
+        @else if lightness($color) < 30{
+            @return lighten($color, $level + 10)
+        } 
+        @else{
+            @return lighten($color, $level)
+        }
+    }
+    @else {
+        @if lightness($color) < 30 {        
+            @return darken($color, $level - 18);
+        }
+        @else if lightness($color) < 45{
+            @return darken($color, $level - 10)
+        } 
+        @else{
+            @return darken($color, $level)
+        }
+    }
+}
+
+$text-light: setTextColor($bg-light);
+$text-dark: setTextColor($bg-dark);
+$tertiary: mix($primary, $secondary);
+$complimentary: complement($primary) ;
+
+$primary-light: colorLevel($primary, 20, 'lighten');
+$primary-lighter: colorLevel($primary, 30, 'lighten');
+$primary-lightest: colorLevel($primary, 40, 'lighten');
+$primary-dark: colorLevel($primary, 20, 'darken');
+$primary-darker: colorLevel($primary, 30, 'darken');
+$primary-darkest: colorLevel($primary, 40, 'darken');
+
+$secondary-light: colorLevel($primary, 20, 'lighten');
+$secondary-lighter: colorLevel($primary, 30, 'lighten');
+$secondary-dark: colorLevel($primary, 20, 'darken');
+$secondary-darker: colorLevel($primary, 30, 'darken');

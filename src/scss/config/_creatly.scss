@@ -1,0 +1,57 @@
+// $fa-font-path : 'font-awesome/webfonts';
+// @import '@fortawesome/fontawesome-free/scss/fontawesome';
+// @import '~@fortawesome/fontawesome-free/scss/regular';
+// @import '~@fortawesome/fontawesome-free/scss/solid';
+// @import '@tailwindcss/base.css';
+// @import '../font-awesome/scss/fontawesome.scss';
+// @import '../font-awesome/scss/regular.scss';
+
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+   background-color: var(--bg);
+   color: var(--text);
+   margin-top: 4.2rem;
+}
+a{
+   text-decoration: none;
+}
+
+// @import 'tailwindcss/utilities';
+
+@import './colors';
+@import '../themes/theme-light';
+@import '../themes/theme-dark';
+@import '../components/alerts';
+@import '../components/buttons';
+@import '../components/widgets';
+@import '../components/typography';
+@import '../components/tables';
+@import '../components/forms';
+@import '../components/navbar';
+
+.primary{
+   color: darkn;
+   background-color: $primary;
+}
+.primary-dark{
+   background-color: $primary-dark ;
+}
+.primary-darker{
+   background-color: $primary-darker ;
+}.primary-darkest{
+   background-color: $primary-darkest;
+}
+.primary-light{
+   background-color: $primary-light;
+}
+.primary-lighter{
+   background-color: $primary-lighter;
+}.primary-lightest{
+   background-color: $primary-lightest;
+}

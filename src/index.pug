@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Gizo
+        link(rel="stylesheet", href="./scss/app.scss")
+
+
+    body(class="theme-light")
+        .overlay
+        p.
+            
+        include includes/header.pug
+        main
+            .hero-section.container
+                .hero-left(creat-left)
+                    h1 we are gizo
+                    
+                    p= datas.motto
+                    p= datas.theme
+                    .hero-buttons
+                        a(href="/pages/services.pug")
+                            button(class="btn btn-outline") Our Service
+                        a(href="/pages/request.pug")
+                            button(class="btn btn-primary") Make a request
+                .hero-right(creat-right)
+                    include includes/hero.pug
+            
+            section#aims.container(creat-fade)
+                h4.title How we can help you
+                .aims
+                    //- p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi dolor fugit qui amet molestiae non aspernatur officia ipsum porro, autem sunt dicta labore reiciendis, delectus voluptatem unde accusantium nostrum praesentium.
+                    each aim in datas.aims
+                        div.card(class="aim")
+                            img(src=aim.icon, alt="")
+                            p #{ aim.title }
+            section#us.container
+                h4.title1 
+                    img(src=datas.about.icon, alt="" class="about-icon")
+                    |about us
+                .us
+                    p=datas.about.text
+                h4.title1 what we can do
+                .services#services
+                    each service in datas.services
+                        div.card
+                            img(src=service.icon, alt="")
+                            h6 #{ service.title }
+                            p=service.description
+                            button(class=" btn btn-primary") more
+                        //- button(class=" btn btn-outline") more
+
+            section#contact.container
+                h4.title1 Send Us a Message
+                .contact
+                    img.animate-scroll.creat-left(src=datas.contact.icon, alt="")
+                    form.animate-scroll.creat-right(method="POST"  action="/pages/success" class="form" name="contact" data-netlify='true')
+                        input(type="hidden" name="form-name" value="contact")
+
+                        .form-item
+                            input(type="text" id="name" class="form-input-text" autocomplete="off" name="name" required placeholder="your fullname")
+                            label(for="name" class="form-label") full-name
+                        .form-item
+                            input(type="email", id="email" class="form-input-text" autocomplete="email" name="email" required placeholder="your email")
+                            label(for="email" class="form-label") Email
+
+                        .form-item
+                            textarea(name="message" required, id="message" rows="5" class="form-input-text" placeholder="what do you want to tell us" )
+                        button(class="btn" type="submit") submit                    
+                        p.email
+                            span Email : &nbsp;
+                            span=datas.email
+                        p.phone
+                            span phone: &nbsp; 
+                            span=datas.phone
+                        .socials
+                            each social in datas.socials
+                                
+                                a(href=social.url)
+                                    img(src=social.icon, alt="")
+                        
+        
+        p.footer &copy; #{datas.year}  #{datas.companyname}
+        script(src="./js/index.js")
+        
+

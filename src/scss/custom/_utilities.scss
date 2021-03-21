@@ -1,0 +1,29 @@
+
+.container{
+    margin: auto;
+}
+@media all and (min-width: 640px) {
+    .container{
+        max-width: 610px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .container{
+        max-width: 720px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .container{
+        max-width: 950px;
+    }
+}
+.page-title{
+    position: absolute;
+    top: 4rem;
+    text-transform: capitalize;
+    left: 50%;
+    text-decoration: underline;
+    transform: translateX(-50%);
+}

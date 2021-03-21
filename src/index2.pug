@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title gizo
+    link(rel="stylesheet", href="scss/app.scss")
+    
+  body.theme-dark
+
+    - console.log(datas)
+    p= hello
+    i(class="fas fa-spin fa-adjust text-white")
+
+    div.container(class=" mx-auto")
+      each dataset in datas
+        p(class=" text-center") #[span= dataset.id]  #{dataset.name}   #[em= dataset.details]
+        i(class="fa fa-spin fa-home")
+      else
+        p= 'nodata'
+    script(src="js/index.js")
